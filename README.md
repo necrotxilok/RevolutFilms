@@ -107,4 +107,4 @@ $ npm start
 
 Si todo va bien se abrirá la aplicación en el navegador.
 
-> NOTA: Si no se ven las películas posible que falle la clave API de TMDB
+> NOTA: Si no se ven las películas es posible que falle la clave API de TMDB
