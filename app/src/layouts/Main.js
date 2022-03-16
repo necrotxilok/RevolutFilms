@@ -2,7 +2,7 @@ import "./Main.css";
 import logo from "../logo.png";
 
 import { useState, useEffect, useRef } from "react";
-import { Outlet, Link, useNavigate, useParams } from "react-router-dom";
+import { Outlet, NavLink, useNavigate, useParams } from "react-router-dom";
 import { gsap } from "gsap";
 
 import actions from "../actions";
@@ -22,6 +22,8 @@ function Main() {
 	const params = useParams();
 	const query = params.query;
 
+	const header = useRef();
+
 	const navigate = useNavigate();
 	const loading = () => {
 		return layoutStatus === LOADING;
@@ -38,7 +40,7 @@ function Main() {
 	}
 
 	actions.openModal = (props) => {
-		console.log('Opening Modal');
+		//console.log('Opening Modal');
 		document.body.className = 'no-scroll';
 		setModal(<FilmDetail {...props}/>);
 	}
@@ -56,6 +58,11 @@ function Main() {
 		if (!loading()) {
 			return;
 		}
+		//console.log('Top', header.current.offsetTop);
+		window.scrollTo(0, header.current.offsetTop);
+		/*window.addEventListener('resize', () => {
+			window.scrollTo(0, header.current.offsetTop);
+		}, true);*/
 		gsap.to('.app-start', {
 			delay: 0.5,
 			duration: 1.5,
@@ -74,18 +81,32 @@ function Main() {
 		}
 	}, [query]);
 
-	console.log('Render Main Layout');
+	//console.log('Render Main Layout');
 
 	return (
 	    <div className="app">
-			<header className="app-header flex-v-center">
+			<div className="action-toolbar">
+				<div className="container">
+					<div className="left">
+						<NavLink to="" className="link">Inicio</NavLink>
+						<NavLink to="mylist" className="link">Mis Pelis</NavLink>
+					</div>
+					<div className="right">
+						<div className="search-box">
+							<form onSubmit={search}>
+								<input type="text"
+									ref={searchRef}
+									defaultValue={query ? decodeURI(query).replaceAll('+', ' ') : ""}
+									placeholder="Buscar película"/>
+								<button className="btn">Buscar</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<header className="app-header flex-v-center" ref={header}>
 				<h1>Revolut Films</h1>
 			</header>
-			<div className="action-toolbar container">
-				<div className="left"><Link to="" className="btn">Inicio</Link></div>
-				<div className="search-box"><form onSubmit={search}><input type="text" ref={searchRef} defaultValue={query ? decodeURI(query).replaceAll('+', ' ') : ""}/><button className="btn">Buscar</button></form></div>
-				<div className="right"><Link to="mylist" className="btn">Mis Pelis</Link></div>
-			</div>
 			<div className="app-body container">
 				<section>
 					<Outlet />

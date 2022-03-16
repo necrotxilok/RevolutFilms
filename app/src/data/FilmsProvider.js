@@ -31,7 +31,7 @@ const FilmsProvider = {
 	},
 	getMyList: () => {
 		if (FilmsProvider.mylist.length) {
-			console.log('ready');
+			//console.log('ready');
 			return FilmsProvider.mylist;
 		}
 

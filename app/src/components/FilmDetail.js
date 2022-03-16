@@ -22,6 +22,7 @@ const Panel = styled.div`
 const LeftPanel = styled.div`
 	width: 33%;
 	padding: 10px;
+	text-align: center;
 `;
 
 const RightPanel = styled.div`
@@ -30,7 +31,7 @@ const RightPanel = styled.div`
 `;
 
 const Image = styled.img`
-	display: block;
+	display: inline-block;
 	max-width: 100%;
 	border-radius: 8px;
 `;
@@ -60,7 +61,7 @@ const VoteButton = styled.img`
 `;
 
 function FilmDetail(props) {
-	console.log(props);
+	//console.log(props);
 
 	let cover = defaultCover;
 	if (props.image) {
@@ -96,7 +97,7 @@ function FilmDetail(props) {
 	}
 
 	return <>
-		<Panel>
+		<Panel className="film-detail">
 			<LeftPanel><Image src={cover}/></LeftPanel>
 			<RightPanel>
 				<Title>{props.title}</Title>
@@ -104,8 +105,8 @@ function FilmDetail(props) {
 					<p style={{color:"#ccc"}}>{props.overview}</p>
 					<h3>¿Qué te ha parecido esta película?</h3>
 					<div>
-						<VoteButton src={dislikeImage} type="left" voted={disliked} onClick={onDislike}/>
-						<VoteButton src={likeImage} type="right" voted={liked} onClick={onLike}/>
+						<VoteButton className="vote-button" src={dislikeImage} type="left" voted={disliked} onClick={onDislike}/>
+						<VoteButton className="vote-button" src={likeImage} type="right" voted={liked} onClick={onLike}/>
 					</div>
 				</div>
 			</RightPanel>

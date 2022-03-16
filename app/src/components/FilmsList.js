@@ -8,7 +8,7 @@ function FilmsList({films}) {
 	if (!films.length) {
 		return "";
 	}
-	console.log("Render Films List", films);
+	//console.log("Render Films List", films);
 	return <div className="films-list">
 		{films.map((film, index) => {
 			return <FilmItem

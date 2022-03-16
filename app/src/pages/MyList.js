@@ -5,8 +5,10 @@ import FilmsList from "../components/FilmsList";
 import AppContext from "../AppContext";
 
 function MyList() {
+	const [loading, setLoading] = useState(true);
 	const [goodFilms, setGoodFilms] = useState([]);
 	const [badFilms, setBadFilms] = useState([]);
+
 	const updated = useContext(AppContext);
 
 	useEffect(() => {
@@ -17,14 +19,19 @@ function MyList() {
 		setBadFilms(list.filter((film) => {
 			return FilmsProvider.getVote(film) == 'bad';
 		}));
+		setLoading(false);
 	}, [updated]);
 
+	if (loading) {
+		return null;
+	}
+
 	return <>
-		<h3>Pelis Buenas</h3>
+		<h2>Pelis Buenas</h2>
 		{goodFilms.length
 			? <FilmsList films={goodFilms}/>
 			: <div style={{color:"#777"}}>Todavía no has puntuado ninguna película buena.</div>}
-		<h3>Pelis Malas</h3>
+		<h2>Pelis Malas</h2>
 		{badFilms.length
 			? <FilmsList films={badFilms}/>
 			: <div style={{color:"#777"}}>Todavía no has puntuado ninguna película mala.</div>}

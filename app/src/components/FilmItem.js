@@ -16,7 +16,7 @@ function FilmItem(props) {
 
 	const onOpenCard = () => {
 		const vote = FilmsProvider.getVote(props);
-		console.log('vote?', vote);
+		//console.log('vote?', vote);
 		actions.openModal({...props, vote});
 	}
 

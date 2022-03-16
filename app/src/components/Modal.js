@@ -46,7 +46,7 @@ const Dialog = styled.div`
 	color: #fff;
 	border-radius: 8px;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.6);
-	transform: translateY(100vh);
+	transform: translateY(125vh);
 `;
 
 const Close = styled.button`
@@ -92,7 +92,7 @@ function Modal({children}) {
 			opacity: 1
 		});
 		gsap.to(dialog.current, {
-			duration: 0.4,
+			duration: 0.5,
 			ease: "back.inOut",
 			transform: "translateY(0)",
 			onComplete: () => {
@@ -114,17 +114,17 @@ function Modal({children}) {
 			}
 		});
 		gsap.to(dialog.current, {
-			duration: 0.3,
+			duration: 0.5,
 			ease: "back.inOut",
-			transform: "translateY(100vh)"
+			transform: "translateY(125vh)"
 		});
 	}, [closing])
 
 	return <Overlay>
 		<OverlayBG ref={overlay} onClick={onClose}/>
-		<Scroll hiding={opening || closing}>
-			<Dialog ref={dialog}>
-				<Close onClick={onClose} hiding={opening || closing}>X</Close>
+		<Scroll hiding={opening || closing} className="modal-scroll">
+			<Dialog ref={dialog} className="modal-dialog">
+				<Close onClick={onClose} hiding={opening || closing} className="modal-close">X</Close>
 				{children}
 			</Dialog>
 		</Scroll>

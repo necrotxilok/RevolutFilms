@@ -30,7 +30,7 @@ function Toast({message}) {
 	const container = useRef();
 
 	useEffect(() => {
-		console.log('Show Toast Message:', message);
+		//console.log('Show Toast Message:', message);
 		const show = () => {
 			// Load
 			gsap.to(container.current, {

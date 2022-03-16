@@ -79,3 +79,19 @@
 	visibility: visible;
 	transition: all 0.3s cubic-bezier(.65,.05,.36,1);
 }
+
+
+@media only screen and (max-width: 600px) {
+	body .films-list .film-item {
+		width: 50%;
+	}
+	body .film-detail {
+		flex-direction: column;
+	}
+	body .film-detail > div {
+		width: auto;
+	}
+	body .film-detail .vote-button {
+		margin: 20px;
+	}
+}

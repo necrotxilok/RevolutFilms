@@ -14,7 +14,7 @@ function Latest() {
 		if (page == 1 && films.length > 0) {
 			return;
 		}
-		console.log('Loading Page', page);
+		//console.log('Loading Page', page);
 		FilmsProvider.get(page, (data) => {
 			setFilms([...films, ...data]);
 		});

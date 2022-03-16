@@ -13,7 +13,7 @@ function Search() {
 	const [searching, setSearching] = useState(true);
 
 	useEffect(() => {
-		console.log('Searching...', query);
+		//console.log('Searching...', query);
 		FilmsProvider.search(query, (data) => {
 			setFilms(data);
 			setSearching(false);
