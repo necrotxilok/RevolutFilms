@@ -1,0 +1,64 @@
+.app-start {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #1b1c1e;
+	color: #ffb301;
+	z-index: 5000;
+}
+
+.app {
+	text-align: center;
+	background-color: #1b1c1e;
+}
+
+.app-header {
+	color: #ffb301;
+}
+
+.app-body {
+	color: #fff;
+	padding-bottom: 100px;
+}
+
+.app-footer {
+	padding: 30px;
+	color: #fff
+}
+
+.container {
+	width: 900px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.action-toolbar {
+	display: flex;
+	padding: 10px;
+	margin-bottom: 32px;
+}
+
+.action-toolbar .left .btn,
+.action-toolbar .right .btn {
+	display: block;
+}
+
+.search-box {
+	flex-grow: 1
+}
+
+.search-box input {
+	width: 60%;
+	padding: 10px 20px;
+	border: 1px solid #ffb301;
+	border-radius: 20px;
+	background-color: #202024;
+	outline: none;
+	color: #fff;
+}
+.search-box button {
+	margin-left: -30px;
+	border: 1px solid #ffb301;
+}

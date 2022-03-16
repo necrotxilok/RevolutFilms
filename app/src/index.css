@@ -1,0 +1,85 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: #1b1c1e;
+}
+/*body.loading {
+	overflow: hidden;
+}*/
+body.no-scroll {
+	overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-moz-selection { /* Code for Firefox */
+	color: #000;
+	background: #ffb301;
+}
+
+::selection {
+	color: #000;
+	background: #ffb301;
+}
+
+a {
+	color: #fff;
+	transition: color 0.1s ease-in-out;
+}
+a:hover {
+	color: #ffb301
+}
+
+
+section {
+	min-height: 66vh;
+}
+
+.flex-v-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn {
+	border: none;
+	padding: 10px 20px ;
+	border-radius: 25px;
+	color: #000;
+	text-decoration: none;
+	background-color: #ffb301;
+	font-weight: bold;
+	cursor:pointer;
+	transition: background-color 0.1s ease-in-out;
+	font-size: 13px;
+}
+
+.btn:hover {
+	background-color: #ffcd57;
+	color: #000;
+}
+
+.btn-big {
+	font-size: 16px;
+	padding: 12px 30px;
+}
+
+.no-page {
+	padding: 10px;
+	font-size: 20px;
+}
+
+.no-page-header {
+	font-size: calc(10px + 20vmin);
+	margin: 0;
+}
