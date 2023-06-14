@@ -10,17 +10,19 @@ Aplicación creada con React JS para buscar y votar tus películas favoritas
 La aplicación está dividad en 2 partes, una para gestionar la API en el servidor
 (`server`) y otra con la aplicación web de React (`app`).
 
-En la carpeta `server` tendríamos la API de comunicación de entre la App y la
-API de [TMDB](https://www.themoviedb.org). He optado por desarrollar este punto
+En la carpeta `server` tendríamos un servidor Express con el que se gestionan
+las llamadas desde la App para establecer comunicación con la API pública de
+[TMDB](https://www.themoviedb.org). He optado por desarrollar este punto
 para poder encapsular la clave de API fuera de la App y evitar su uso por
 parte de terceros.
 
-En la carpeta `app` se encuentra el código fuente de la aplicación web
-desarrollada con React JS y que se comunica directamente con la API a través
-de dos métodos:
+Estos son los puntos de entrada de la API:
 
-- Obtener un listado de películas paginado en orden de popularidad
-- Obtener las películas que coinciden con un texto de búsqueda dado
+- `/api/films/<page>`: Listado de películas paginado por orden de popularidad
+- `/api/search/<text>`: Búsqueda de películas que coinciden con el texto
+
+En la carpeta `app` se encuentra el código fuente de la aplicación web
+desarrollada con React JS.
 
 Al iniciar la aplicación se ha montado un overlay que desaparece tras Iniciar
 por primera vez usando animaciones de `GSAP`. Este overlay no vuelve a aparecer
