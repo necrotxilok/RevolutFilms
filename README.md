@@ -18,8 +18,8 @@ parte de terceros.
 
 Estos son los puntos de entrada de la API:
 
-- `/api/films/<page>`: Listado de películas paginado por orden de popularidad
-- `/api/search/<text>`: Búsqueda de películas que coinciden con el texto
+- `/api/films/<page>` -> Listado de películas paginado por orden de popularidad
+- `/api/search/<text>` -> Búsqueda de películas que coinciden con el texto
 
 En la carpeta `app` se encuentra el código fuente de la aplicación web
 desarrollada con React JS.
