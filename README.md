@@ -12,14 +12,15 @@ La aplicación está dividad en 2 partes, una para gestionar la API en el servid
 
 En la carpeta `server` tendríamos un servidor Express con el que se gestionan
 las llamadas desde la App para establecer comunicación con la API pública de
-[TMDB](https://www.themoviedb.org). He optado por desarrollar este punto
-para poder encapsular la clave de API fuera de la App y evitar su uso por
-parte de terceros.
+[TMDB](https://www.themoviedb.org). 
 
 Estos son los puntos de entrada de la API:
 
 - `/api/films/<page>` -> Listado de películas paginado por orden de popularidad
 - `/api/search/<text>` -> Búsqueda de películas que coinciden con el texto
+
+> NOTA: El servidor Express se ha creado para proteger la clave de la API de 
+> TMDB fuera de la App y así evitar su uso por parte de terceros.
 
 En la carpeta `app` se encuentra el código fuente de la aplicación web
 desarrollada con React JS.
