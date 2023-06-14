@@ -3,11 +3,12 @@
 Aplicación creada con React JS para buscar y votar tus películas favoritas
 (o las que no te gustan).
 
-[Acceder a la aplicación](https://revolutfilms.ntkserver.com/)
+[Demo de la aplicación](https://revolutfilms.ntkserver.com/)
 
 ## Detalles de la implementación
 
-La aplicación consta de dos partes una para el Backend y otra pare el Frontend.
+La aplicación está dividad en 2 partes, una para gestionar la API en el servidor
+(`server`) y otra con la aplicación web de React (`app`).
 
 En la carpeta `server` tendríamos la API de comunicación de entre la App y la
 API de [TMDB](https://www.themoviedb.org). He optado por desarrollar este punto
@@ -37,11 +38,12 @@ y dos botones para puntuar la película. Al hacer click en alguno de ellos se
 guarda la película en el listado correspondiente (Buenas/Malas) y que se pueden
 ver en la pantalla de `mylist`. Además se muestra una notificación en la parte
 inferior indicando la acción que acabas de realizar. Si se vuelve a pulsar sobre
-una votación dada, la película se retira de los listados.
+una votación dada, la película se retira de su listado correspondiente.
 
-Cuando una película ha sido votada en los listados de películas se verá con
-su icono correspondiente. Los listados se actualizan automáticamente con los
-cambios haciendo uso de un único contexto a nivel de aplicación (`AppContext`).
+Cuando una película ha sido votada, en los listados de películas se verá con
+un icono que representa esa votación. Los listados se actualizan automáticamente 
+con los cambios haciendo uso de un único contexto a nivel de aplicación 
+(`AppContext`).
 
 La apertura de Modales (`components/Modal`) se ha desarrollado con la idea de
 poder incluir diversos contenidos aunque actualmente sólo se usa para el
@@ -107,4 +109,4 @@ $ npm start
 
 Si todo va bien se abrirá la aplicación en el navegador.
 
-> NOTA: Si no se ven las películas es posible que falle la clave API de TMDB
+> NOTA: Si no se ven las películas es posible que falle la clave API de TMDB.
