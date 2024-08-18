@@ -3,8 +3,6 @@
 Aplicación creada con React JS para buscar y votar tus películas favoritas
 (o las que no te gustan).
 
-[Demo](https://revolutfilms.ntkserver.com/)
-
 ## Detalles de la implementación
 
 La aplicación está dividad en 2 partes, una para gestionar la API en el servidor
